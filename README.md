@@ -23,17 +23,18 @@ this data in a unique data set, striped from the variables which were not relate
 This first data set contained 10299 observations for 2 categorical variables (factors) named "subject" (30 levels - 1:30) 
 and "activity" (6 levels - WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING ) and 79 numeric variables
 of measured and processed data. The interpretation of each of this 79 variables can be done using the following abbreviations:
-    t - time
-    f - frequency obtained from Fourier Transforms - FFT
-    Body - signals from the body of the subject
-    Gravity - signals from the gravity field
-    Acc - aceleration data
-    Gyro -angular velocity data
-    Jerk - Acc or Gyro data derived in time
-    Mag - magnitude values calculated using the Euclidean norm
-    X, Y or Z - spatial axial orientations
-    mean() - mean value
-    std() - standard deviation
+
+    - t - time
+    - f - frequency obtained from Fourier Transforms - FFT
+    - Body - signals from the body of the subject
+    - Gravity - signals from the gravity field
+    - Acc - aceleration data
+    - Gyro -angular velocity data
+    - Jerk - Acc or Gyro data derived in time
+    - Mag - magnitude values calculated using the Euclidean norm
+    - X, Y or Z - spatial axial orientations
+    - mean() - mean value
+    - std() - standard deviation
     
 As such, for example, tBodyAccJerk-mean()-X is the mean of the jerk of the accelaration of the body in time, along the X axis, 
 and tGravityAccMag-std() is the standard deviation of the calculated magnitude of the gravity accelaration in time.
