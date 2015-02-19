@@ -59,9 +59,9 @@ variable_names <-as.vector(features$V2)
 # name the columns in the merged data frame with the selected labels
 
 names(test_train_selected) <- c("subject", "activity", variable_names[c(1:6, 41:46, 81:86, 
-                              121:126, 161:166, 201:202, 214:215, 227:228, 240:241, 253:254, 
-                              266:271, 294:296, 345:350, 373:375, 424:429, 452:454, 503:504, 
-                              513, 516:517, 526, 529:530, 539, 542:543, 552)])
+                                                                        121:126, 161:166, 201:202, 214:215, 227:228, 240:241, 253:254, 
+                                                                        266:271, 294:296, 345:350, 373:375, 424:429, 452:454, 503:504, 
+                                                                        513, 516:517, 526, 529:530, 539, 542:543, 552)])
 
 # read the activity file and make a vector with the names
 
@@ -73,9 +73,9 @@ activities_names <-as.vector(activities$V2)
 test_train_selected$activity <- factor(test_train_selected$activity)
 levels(test_train_selected$activity) <- activities_names
 
-# reorder the data frame, first by subject, second by activity
+# reorder the data frame, first by activity, second by subject
 
-almost_tidy <- arrange(test_train_selected, subject, activity)
+almost_tidy <- arrange(test_train_selected, activity, subject)
 
 # categorize the "subject" variable
 
@@ -87,11 +87,11 @@ library(reshape2)
 
 # melt the data set into a long-format data set
 
-tidy_melt <- melt(almost_tidy, id.vars = c("subject", "activity"))
+tidy_melt <- melt(almost_tidy, id.vars = c("activity", "subject"))
 
 # cast the previous data set
 
-tidy <- dcast(tidy_melt, subject + activity ~ variable, fun.aggregate = mean)
+tidy <- dcast(tidy_melt, activity + subject ~ variable, fun.aggregate = mean)
 
 # export the tidy data set to a text format
 
